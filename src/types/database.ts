@@ -1,11 +1,19 @@
+export interface Order {
+  id: string;
+  details: OrderDetail;
+  customerId: string;
+  total: number;
+  status: OrderStatus;
+}
+
 export interface Product {
-  productId: string;
+  id: string;
   price: number;
   numInStock: number;
 }
 
 export interface OrderDetail {
-  orderDetailId: string;
+  id: string;
   orderId: string;
   products: Product[];
   quantity: number;
@@ -21,7 +29,7 @@ export interface CustomerAddress {
 }
 
 export interface Customer {
-  customerId: string;
+  id: string;
   firstName: string;
   lastName: string;
   age: number;
