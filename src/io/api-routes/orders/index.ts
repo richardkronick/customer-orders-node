@@ -11,11 +11,12 @@ import { OrderStatus } from '../../../types/database';
     - Use an auth token for authentication and authorization
     - Use an order details object (see /types/database.ts) instead of string
     - Add validation to ensure that the number of items ordered is in fact in stock and handle a shortage
+    - Add validation to only allow updates for certain order statuses
     - Account for sales taxes
     - Add TypeScript more types where valuable
     - Maybe add /types/business.ts to represent the dto objects
     - Move database queries into a separate file
-    -- Add nodemon for local development
+    - Add nodemon for local development
 */
 async function orderRoutes(fastify: FastifyInstance) {
   
