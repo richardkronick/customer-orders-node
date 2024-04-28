@@ -21,6 +21,7 @@ export interface CustomerAddress {
 }
 
 export interface Customer {
+  customerId: string;
   firstName: string;
   lastName: string;
   age: number;
