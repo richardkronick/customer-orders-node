@@ -6,7 +6,7 @@ This is a simple API for managing customer orders.
 
 - Create a new order
 - Get all orders for a specific customer
-- Update an existing order
+- Update/cancel an existing order
 
 ## Prerequisites
 
@@ -22,4 +22,4 @@ This is a simple API for managing customer orders.
 
 * POST /orders: Create a new order
 * GET /orders?customerId={customerId}: Get all orders for a specific customer
-* PUT /orders/{orderId}: Update an existing order
+* PUT /orders/{orderId}: Update or cancel an existing order
