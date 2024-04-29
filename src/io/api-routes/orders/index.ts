@@ -7,12 +7,21 @@ import { OrderStatus } from '../../../types/database';
 /* TODO:
     - Use something like the sqlite package to make db interaction async
     - Add logging and potentially some alerts
+    - Explore adding service classes, validation classes. If so, we'd probably add interfaces. Will this added complexity be needed long-term?
+    - What types of orders might we have? Could we need interfaces for models for DI, testing or polymorphism?
+    - Should we have a separate end point for canceling an item?
+        - Depends on the needs of the busines...
+        - What statuses will we have? Is "cancelled" just one of many?
+         - A single 'order update' endpoint centralizes logic and simplifies routing, but how complex is an order object?
+         - Is an "order update" really a single responsibility, or a group of them?
+         - How complex could an order cancellation get? Assuming we would also need logic for refunds, notifications, update the num in stock, etc.
+        - Perhaps explore separating: update order status, update order total, remote product, add product, etc.
     - Add API documentation such as Swagger
     - Use an auth token for authentication and authorization
     - Use an order details object (see /types/database.ts) instead of string
     - Add validation to ensure that the number of items ordered is in fact in stock and handle a shortage
     - Add validation to only allow updates for certain order statuses
-    - Account for sales taxes
+    - Account for sales taxes, discounts, coupon codes
     - Add TypeScript more types where valuable
     - Maybe add /types/business.ts to represent the dto objects
     - Move database queries into a separate file
